@@ -11,5 +11,16 @@
 <h:head>
     <title>Start page</title>
 </h:head>
-
+<h:body>
+    <h:form id="clockForm" style="color: #0a9d6f; font-family: sans-serif;margin-bottom: 20px;">
+        <h:outputLabel id="clockLabel" value="#{clockBean.date}"/>
+        <h:commandButton id="clockTimerBtn" style="display: none" action="#{clockBean.updateTime}">
+            <f:ajax render="clockLabel"/>
+        </h:commandButton>
+        <h:outputScript name="js/clock.js"/>
+    </h:form>
+    <h:form>
+        <p:commandButton id="submit" action="toMain" value="Main page"/>
+    </h:form>
+</h:body>
 </html>

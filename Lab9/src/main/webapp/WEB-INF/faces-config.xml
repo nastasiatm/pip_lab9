@@ -5,18 +5,18 @@
               xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_2_0.xsd"
               version="2.0">
     <navigation-rule>
-        <from-view-id>/StartPage.xhtml</from-view-id>
+        <from-view-id>/Start.xhtml</from-view-id>
         <navigation-case>
             <from-outcome>toMain</from-outcome>
-            <to-view-id>/MainPage.xhtml</to-view-id>
+            <to-view-id>/Main.xhtml</to-view-id>
             <redirect/>
         </navigation-case>
     </navigation-rule>
     <navigation-rule>
-        <from-view-id>/MainPage.xhtml</from-view-id>
+        <from-view-id>/Main.xhtml</from-view-id>
         <navigation-case>
             <from-outcome>toStart</from-outcome>
-            <to-view-id>/StartPage.xhtml</to-view-id>
+            <to-view-id>/Start.xhtml</to-view-id>
             <redirect/>
         </navigation-case>
     </navigation-rule>

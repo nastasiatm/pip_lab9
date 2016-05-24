@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"
+        >
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui" xmlns:f="http://java.sun.com/jsf/core">
+
+<h:head>
+    <title>Main page</title>
+</h:head>
+<h:body>
+    <h:form id="form">
+        <p:selectOneMenu value="#{mainBean.x}">
+            <f:selectItem itemValue="-2" itemLabel="-2"/>
+            <f:selectItem itemValue="-1.5" itemLabel="-1.5"/>
+            <f:selectItem itemValue="-1" itemLabel="-1"/>
+            <f:selectItem itemValue="-0.5" itemLabel="-0.5"/>
+            <f:selectItem itemValue="0" itemLabel="0"/>
+            <f:selectItem itemValue="0.5" itemLabel="0.5"/>
+            <f:selectItem itemValue="1" itemLabel="1"/>
+            <f:selectItem itemValue="1.5" itemLabel="1.5"/>
+        </p:selectOneMenu>
+        <p:inputText placeholder="-3..3" value="#{mainBean.y}"/>
+        <p:selectOneRadio value="#{mainBean.r}">
+            <f:selectItem itemLabel="1" itemValue="1"/>
+            <f:selectItem itemLabel="2" itemValue="2"/>
+            <f:selectItem itemLabel="3" itemValue="3"/>
+            <f:selectItem itemLabel="4" itemValue="4"/>
+            <f:selectItem itemLabel="5" itemValue="5"/>
+        </p:selectOneRadio>
+
+        <p:commandButton id="sendButton" value="Send" action="#{mainBean.checkData}" update="form"/>
+        <p:dataTable id="resTable" value="#{resultBean.resultList}" var="res"
+                     styleClass="result-table"
+                     headerClass="result-table-header"
+                     rowClasses="result-table-odd-row, result-table-even-row"
+                     style="width: 400px; float: left;"
+                     scrollable="true" scrollHeight="400">
+            <p:column>
+                <f:facet name="header">X</f:facet>
+                #{res._x}
+            </p:column>
+            <p:column>
+                <f:facet name="header">Y</f:facet>
+                #{res._y}
+            </p:column>
+            <p:column>
+                <f:facet name="header">R</f:facet>
+                #{res._r}
+            </p:column>
+            <p:column>
+                <f:facet name="header">In area</f:facet>
+                #{res.inArea}
+            </p:column>
+        </p:dataTable>
+        <p:graphicImage id="area" value="#{imageBean.image}" style="display: inline-block; float: right;"
+                        cache="false" onclick="d()"/>
+        <p:inputText id="yMouse" value="#{mainBean.yMouse}" style="display: none"/>
+        <p:inputText id="xMouse" value="#{mainBean.xMouse}" style="display: none"/>
+        <p:commandButton id="areaClickButton" style="display: none" action="#{mainBean.checkClick}"
+                         update="resTable, area"/>
+        <h:outputScript name="js/image.js"/>
+    </h:form>
+    <h:form style="margin-top: 30px; float: left;clear: left">
+        <p:commandButton id="goToStart" action="toStart" value="Start page"/>
+    </h:form>
+</h:body>
+</html>
