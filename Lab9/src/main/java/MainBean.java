@@ -110,4 +110,9 @@ public class MainBean implements Serializable {
                 || (x >= -r / 2 && x <= 0 && y <= r / 2 && y >= 0 && x * x + y * y <= r * r / 4)
                 || (x >= 0 && x <= r && y >= 0 && y <= r - x));
     }
+
+    public void  changedRadius() {
+        imageBean.setRadius(r);
+        checkExistedPoints(r);
+    }
 }

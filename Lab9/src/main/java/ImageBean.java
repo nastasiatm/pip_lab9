@@ -75,9 +75,9 @@ public class ImageBean implements Serializable {
         ig2.fillRect(0, 0, width, height);
         //Фигура
         ig2.setColor(Color.CYAN);
-        ig2.fillRect(width / 2 - r / 2, height / 2, r / 2, r);
-        ig2.fillArc(width / 2 - r, height / 2 - r, 2 * r, 2 * r, 0, 90);
-        ig2.fillPolygon(new int[]{width / 2, width / 2 + r, width / 2}, new int[]{height / 2, height / 2, height / 2 + r / 2}, 3);
+        ig2.fillRect(width / 2 - r, height / 2, r, r / 2);
+        ig2.fillArc(width / 2 - r / 2, height / 2 - r / 2, r, r, 90, 180);
+        ig2.fillPolygon(new int[]{width / 2, width / 2 + r, width / 2}, new int[]{height / 2, height / 2, height / 2 - r}, 3);
         //==================================
         //Оси
         ig2.setColor(Color.BLACK);
