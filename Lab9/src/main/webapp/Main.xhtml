@@ -58,7 +58,7 @@
             </p:column>
         </p:dataTable>
         <p:graphicImage id="area" value="#{imageBean.image}" style="display: inline-block; float: right;"
-                        cache="false" onclick="d()"/>
+                        cache="false" onclick="d(event)"/>
         <p:inputText id="yMouse" value="#{mainBean.yMouse}" style="display: none"/>
         <p:inputText id="xMouse" value="#{mainBean.xMouse}" style="display: none"/>
         <p:commandButton id="areaClickButton" style="display: none" action="#{mainBean.checkClick}"

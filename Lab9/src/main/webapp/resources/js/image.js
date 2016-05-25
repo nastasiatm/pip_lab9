@@ -30,6 +30,3 @@ var d = function (e) {
     document.getElementById('form:yMouse').value = y;
     document.getElementById('form:areaClickButton').click();
 };
-function areaClick() {
-    document.getElementById('form:area').onclick = d(event);
-}
