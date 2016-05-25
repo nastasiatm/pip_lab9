@@ -18,7 +18,7 @@ var d = function (e) {
         }
     }
     if (!isNaN(rad)) {
-        var k = rad * 1.2;//Magic number! 1-длина отрезка R, 1.2 - длина от 0 до края (Вроде так)
+        var k = rad * 1.2;//Magic number! 1-длина отрезка R, 1.2 - длина от 0 до края
         var l = 300;
         y = y * k / l;
         x = x * k / l;

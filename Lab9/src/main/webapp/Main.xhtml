@@ -13,6 +13,7 @@
 </h:head>
 <h:body>
     <h:form id="form">
+        X:
         <p:selectOneMenu value="#{mainBean.x}">
             <f:selectItem itemValue="-2" itemLabel="-2"/>
             <f:selectItem itemValue="-1.5" itemLabel="-1.5"/>
@@ -23,7 +24,10 @@
             <f:selectItem itemValue="1" itemLabel="1"/>
             <f:selectItem itemValue="1.5" itemLabel="1.5"/>
         </p:selectOneMenu>
-        <p:inputText placeholder="-3..3" value="#{mainBean.y}"/>
+        Y:
+        <p:inputText id="Y" requiredMessage="Value is required" required="#{param['form:areaClickButton']==null}" placeholder="-3..3" value="#{mainBean.y}" onchange="control_y()" onkeyup="control_y()" onblur="control_y()"/>
+        <p:message for="Y" style="color: red"/>
+        R:
         <p:selectOneRadio id="r" value="#{mainBean.r}">
             <f:selectItem itemLabel="1" itemValue="1"/>
             <f:selectItem itemLabel="2" itemValue="2"/>
