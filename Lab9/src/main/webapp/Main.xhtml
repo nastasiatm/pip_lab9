@@ -26,6 +26,7 @@
         </p:selectOneMenu>
         Y:
         <p:inputText id="Y" requiredMessage="Value is required" required="#{param['form:areaClickButton']==null}" placeholder="-3..3" value="#{mainBean.y}" onchange="control_y()" onkeyup="control_y()"/>
+        <h:outputScript name="js/control_y.js"/>
         <p:message for="Y" style="color: red"/>
         R:
         <p:selectOneRadio id="r" value="#{mainBean.r}">
