@@ -13,7 +13,7 @@
 </h:head>
 <h:body>
     <h:form id="form">
-        X:
+        <p>X:
         <p:selectOneMenu value="#{mainBean.x}">
             <f:selectItem itemValue="-2" itemLabel="-2"/>
             <f:selectItem itemValue="-1.5" itemLabel="-1.5"/>
@@ -24,10 +24,14 @@
             <f:selectItem itemValue="1" itemLabel="1"/>
             <f:selectItem itemValue="1.5" itemLabel="1.5"/>
         </p:selectOneMenu>
+        </p>
+        <p>
         Y:
         <p:inputText id="Y" requiredMessage="Value is required" required="#{param['form:areaClickButton']==null}" placeholder="-3..3" value="#{mainBean.y}" onchange="control_y()" onkeyup="control_y()"/>
         <h:outputScript name="js/control_y.js"/>
         <p:message for="Y" style="color: red"/>
+        </p>
+        <p>
         R:
         <p:selectOneRadio id="r" value="#{mainBean.r}">
             <f:selectItem itemLabel="1" itemValue="1"/>
@@ -37,8 +41,11 @@
             <f:selectItem itemLabel="5" itemValue="5"/>
             <p:ajax listener="#{mainBean.changedRadius}" update="area"/>
         </p:selectOneRadio>
-
+        </p>
+        <p>
         <p:commandButton id="sendButton" value="Send" action="#{mainBean.checkData}" update="form"/>
+        </p>
+        <p>
         <p:dataTable id="resTable" value="#{resultBean.resultList}" var="res"
                      styleClass="result-table"
                      headerClass="result-table-header"
@@ -62,6 +69,7 @@
                 #{res.inArea}
             </p:column>
         </p:dataTable>
+        </p>
         <p:graphicImage id="area" value="#{imageBean.image}" style="display: inline-block; float: right;"
                         cache="false" onclick="d(event)"/>
         <p:inputText id="yMouse" value="#{mainBean.yMouse}" style="display: none"/>

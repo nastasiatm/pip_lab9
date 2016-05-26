@@ -12,15 +12,22 @@
     <title>Start page</title>
 </h:head>
 <h:body>
-    <h:form id="clockForm" style="color: #0a9d6f; font-family: sans-serif;margin-bottom: 20px;">
-        <h:outputLabel id="clockLabel" value="#{clockBean.date}"/>
-        <h:commandButton id="clockTimerBtn" style="display: none" action="#{clockBean.updateTime}">
-            <f:ajax render="clockLabel"/>
-        </h:commandButton>
-        <h:outputScript name="js/clock.js"/>
-    </h:form>
-    <h:form>
-        <p:commandButton id="submit" action="toMain" value="Main page"/>
-    </h:form>
+    <div class="mainBlock">
+        <div id="head" align="center" style="border-radius: 65px 0px; font: 100% serif; background: #F1AD2E; border: 1px solid black; padding: 15px; margin-bottom: 10px;">
+                <p>Трофимова Анастасия Михайловна</p>
+                <p>Группа P3202</p>
+                <p>Вариант 234</p>
+        </div>
+        <h:form id="clockForm" align="center" style="color: #0a9d6f; font-family: sans-serif; margin-bottom: 20px;">
+            <h:outputLabel id="clockLabel" value="#{clockBean.date}"/>
+            <h:commandButton id="clockTimerBtn" style="display: none" action="#{clockBean.updateTime}">
+                <f:ajax render="clockLabel"/>
+            </h:commandButton>
+            <h:outputScript name="js/clock.js"/>
+        </h:form>
+        <h:form>
+            <p:commandButton id="submit" action="toMain" value="Main page"/>
+        </h:form>
+    </div>
 </h:body>
 </html>

@@ -9,7 +9,6 @@ function control_y() {
     if (y_valid) {
         document.getElementById("form:sendButton").disabled = false;
         document.getElementById("form:Y").style.borderColor = "#0a31bf";
-        document.getElementById("form:sendButton").style.background = "#fb00ad";
     } else {
         document.getElementById("form:sendButton").disabled = true;
         document.getElementById("form:sendButton").style.background = "#EEEEEE";
